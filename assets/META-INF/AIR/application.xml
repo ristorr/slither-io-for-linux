@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<application xmlns="http://ns.adobe.com/air/application/51.2">
+    <id>com.hypah.io.slither</id>
+    <versionNumber>3.06</versionNumber>
+    <filename>slither.io</filename>
+    <name>slither.io</name>
+    <initialWindow>
+        <content>slither%20android.swf</content>
+        <systemChrome>none</systemChrome>
+        <transparent>false</transparent>
+        <visible>true</visible>
+        <fullScreen>true</fullScreen>
+        <autoOrients>true</autoOrients>
+        <renderMode>direct</renderMode>
+        <!-- Whether direct mode allocates storage for depth and stencil buffers. Default false -->
+        <depthAndStencil>true</depthAndStencil>
+    </initialWindow>
+    <icon>
+        <image36x36>screenshots/icon36x36.png</image36x36>
+        <image48x48>screenshots/icon48x48.png</image48x48>
+        <image96x96>screenshots/icon96x96.png</image96x96>
+        <image72x72>screenshots/icon72x72.png</image72x72>
+        <image144x144>screenshots/icon144x144.png</image144x144>
+        <image192x192>screenshots/icon192x192.png</image192x192>
+        <image512x512>screenshots/icon512x512.png</image512x512>
+    </icon>
+    <android>
+        <containsVideo>true</containsVideo>
+        <manifestAdditions><![CDATA[<manifest android:installLocation="auto" >
+  <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="35"/>     <!-- always manually set target sdk to 35 -->
+  <permission android:name="air.com.hypah.io.slither.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" android:protectionLevel="signature"/>
+  <uses-permission android:name="air.com.hypah.io.slither.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"/>
+  <uses-permission android:name="com.android.vending.BILLING"/>
+  <queries>
+    <intent>
+      <action android:name="com.android.vending.billing.InAppBillingService.BIND"/>
+    </intent>
+    <!-- query for checking email apps -->
+    <intent>
+      <action android:name="android.intent.action.SEND"/>
+      <data android:mimeType="message/rfc822"/>
+    </intent>
+  </queries>
+  <!-- Permission will be merged into the manifest of the hosting app. -->
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+  <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+  <!-- Required permission for App measurement to run. -->
+  <uses-permission android:name="android.permission.INTERNET"/>
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+  <uses-permission android:name="android.permission.WAKE_LOCK"/>
+  <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>     <!-- always re-add this one manually -->
+  <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
+  <uses-permission android:name="android.permission.ACCESS_ADSERVICES_ATTRIBUTION"/>
+  <uses-permission android:name="android.permission.ACCESS_ADSERVICES_AD_ID"/>
+  <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE"/>
+  <!-- Required by older versions of Google Play services to create IID tokens -->
+  <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+  
+  <application
+						android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+						android:appCategory="game"
+    >
+    
+    <meta-data android:name="android.max_aspect" android:value="2.5"/>
+    <meta-data android:name="android.notch_support" android:value="true"/>
+    
+    <activity android:name="com.distriqt.extension.application.settings.SettingsActivity" android:label="Settings" android:exported="false" />
+    
+    <provider android:name="androidx.startup.InitializationProvider" android:authorities="air.com.hypah.io.slither.androidx-startup" android:exported="false">
+      <meta-data android:name="androidx.lifecycle.ProcessLifecycleInitializer" android:value="androidx.startup"/>
+    </provider>
+    <activity android:name="com.distriqt.extension.inappbilling.activities.ProductViewActivity" android:exported="false" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+
+    <!-- AUTO START and ALARM MANAGER -->
+    <receiver android:name="com.distriqt.extension.application.receivers.ApplicationStartupReceiver" android:enabled="true" android:exported="false" android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
+      <intent-filter>
+        <action android:name="android.intent.action.BOOT_COMPLETED"/>
+        <action android:name="android.intent.action.QUICKBOOT_POWERON"/>
+        <action android:name="com.htc.intent.action.QUICKBOOT_POWERON"/>
+        <category android:name="android.intent.category.DEFAULT"/>
+      </intent-filter>
+    </receiver>
+    <!-- ALARM MANAGER -->
+    <receiver android:name="com.distriqt.extension.application.alarms.AlarmReceiver" android:enabled="true" android:exported="false"/>
+    <activity android:name="com.distriqt.extension.application.alarms.AlarmActivity" android:exported="false" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+
+    <!-- SETTINGS -->
+    <activity android:name="com.distriqt.extension.application.settings.SettingsActivity" android:exported="false" android:label="Settings"/>
+    <activity android:name="com.distriqt.core.auth.AuthorisationActivity" android:exported="false" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+    
+  </application>
+</manifest>
+]]></manifestAdditions>
+    </android>
+    <resdir>res</resdir>
+    <iPhone>
+        <requestedDisplayResolution>high</requestedDisplayResolution>
+        <InfoAdditions><![CDATA[
+<key>MinimumOSVersion</key>
+<string>11.0</string>
+<key>NSPhotoLibraryUsageDescription</key>
+<string>Access to photo library is required to save images.</string>
+<key>NSPhotoLibraryAddUsageDescription</key>
+<string>Access to photo library is required to save images.</string>]]></InfoAdditions>
+        <Entitlements></Entitlements>
+    </iPhone>
+    <versionLabel></versionLabel>
+    <extensions>
+        <extensionID>androidx.core</extensionID>
+        <extensionID>com.jetbrains.kotlin</extensionID>
+        <extensionID>com.distriqt.ApplicationRater</extensionID>
+        <extensionID>com.distriqt.Core</extensionID>
+        <extensionID>com.distriqt.InAppBilling</extensionID>
+        <extensionID>com.distriqt.playservices.AppSet</extensionID>
+        <extensionID>com.distriqt.playservices.Base</extensionID>
+        <extensionID>com.distriqt.Application</extensionID>
+        <extensionID>com.google.android.play.review</extensionID>
+    </extensions>
+</application>

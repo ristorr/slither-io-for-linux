@@ -1,0 +1,40 @@
+<extension xmlns="http://ns.adobe.com/air/extension/50.2">
+	<id>com.google.android.play.review</id>
+	<versionNumber>2.0.200</versionNumber>
+	<platforms>
+
+		<platform name="Android-ARM">
+			<applicationDeployment>
+				<nativeLibrary>com.google.android.play.review.android.jar</nativeLibrary>
+				<initializer>com.distriqt.extension.googleplay.review.ReviewExtension</initializer>
+				<finalizer>com.distriqt.extension.googleplay.review.ReviewExtension</finalizer>
+			</applicationDeployment>
+		</platform>
+		<platform name="Android-ARM64">
+			<applicationDeployment>
+				<nativeLibrary>com.google.android.play.review.android.jar</nativeLibrary>
+				<initializer>com.distriqt.extension.googleplay.review.ReviewExtension</initializer>
+				<finalizer>com.distriqt.extension.googleplay.review.ReviewExtension</finalizer>
+			</applicationDeployment>
+		</platform>
+		<platform name="Android-x86">
+			<applicationDeployment>
+				<nativeLibrary>com.google.android.play.review.android.jar</nativeLibrary>
+				<initializer>com.distriqt.extension.googleplay.review.ReviewExtension</initializer>
+				<finalizer>com.distriqt.extension.googleplay.review.ReviewExtension</finalizer>
+			</applicationDeployment>
+		</platform>
+		<platform name="Android-x64">
+			<applicationDeployment>
+				<nativeLibrary>com.google.android.play.review.android.jar</nativeLibrary>
+				<initializer>com.distriqt.extension.googleplay.review.ReviewExtension</initializer>
+				<finalizer>com.distriqt.extension.googleplay.review.ReviewExtension</finalizer>
+			</applicationDeployment>
+		</platform>
+
+		<platform name="default"> 
+			<applicationDeployment /> 
+		</platform>
+		
+	</platforms>
+</extension>

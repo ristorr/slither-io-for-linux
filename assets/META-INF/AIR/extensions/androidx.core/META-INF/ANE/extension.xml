@@ -1,0 +1,39 @@
+<extension xmlns="http://ns.adobe.com/air/extension/50.2">
+	<id>androidx.core</id>
+	<versionNumber>2.0.0</versionNumber>
+	<platforms>
+
+		<platform name="Android-ARM">
+			<applicationDeployment>
+				<nativeLibrary>androidx.core.android.jar</nativeLibrary>
+				<initializer>com.distriqt.extension.androidx.core.CoreExtension</initializer>
+				<finalizer>com.distriqt.extension.androidx.core.CoreExtension</finalizer>
+			</applicationDeployment>
+		</platform>
+		<platform name="Android-ARM64">
+			<applicationDeployment>
+				<nativeLibrary>androidx.core.android.jar</nativeLibrary>
+				<initializer>com.distriqt.extension.androidx.core.CoreExtension</initializer>
+				<finalizer>com.distriqt.extension.androidx.core.CoreExtension</finalizer>
+			</applicationDeployment>
+		</platform>
+		<platform name="Android-x86">
+			<applicationDeployment>
+				<nativeLibrary>androidx.core.android.jar</nativeLibrary>
+				<initializer>com.distriqt.extension.androidx.core.CoreExtension</initializer>
+				<finalizer>com.distriqt.extension.androidx.core.CoreExtension</finalizer>
+			</applicationDeployment>
+		</platform>
+		<platform name="Android-x64">
+			<applicationDeployment>
+				<nativeLibrary>androidx.core.android.jar</nativeLibrary>
+				<initializer>com.distriqt.extension.androidx.core.CoreExtension</initializer>
+				<finalizer>com.distriqt.extension.androidx.core.CoreExtension</finalizer>
+			</applicationDeployment>
+		</platform>
+
+		<platform name="default"> 
+			<applicationDeployment /> 
+		</platform>
+	</platforms>
+</extension>

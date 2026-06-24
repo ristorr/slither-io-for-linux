@@ -1,0 +1,40 @@
+<extension xmlns="http://ns.adobe.com/air/extension/50.2">
+	<id>com.distriqt.playservices.AppSet</id>
+	<versionNumber>17.0.1</versionNumber>
+	<platforms>
+
+		<platform name="Android-ARM">
+			<applicationDeployment>
+				<nativeLibrary>com.distriqt.playservices.appset.android.jar</nativeLibrary>
+				<initializer>com.distriqt.extension.playservices.appset.AppSetExtension</initializer>
+				<finalizer>com.distriqt.extension.playservices.appset.AppSetExtension</finalizer>
+			</applicationDeployment>
+		</platform>
+		<platform name="Android-ARM64">
+			<applicationDeployment>
+				<nativeLibrary>com.distriqt.playservices.appset.android.jar</nativeLibrary>
+				<initializer>com.distriqt.extension.playservices.appset.AppSetExtension</initializer>
+				<finalizer>com.distriqt.extension.playservices.appset.AppSetExtension</finalizer>
+			</applicationDeployment>
+		</platform>
+		<platform name="Android-x86">
+			<applicationDeployment>
+				<nativeLibrary>com.distriqt.playservices.appset.android.jar</nativeLibrary>
+				<initializer>com.distriqt.extension.playservices.appset.AppSetExtension</initializer>
+				<finalizer>com.distriqt.extension.playservices.appset.AppSetExtension</finalizer>
+			</applicationDeployment>
+		</platform>
+		<platform name="Android-x64">
+			<applicationDeployment>
+				<nativeLibrary>com.distriqt.playservices.appset.android.jar</nativeLibrary>
+				<initializer>com.distriqt.extension.playservices.appset.AppSetExtension</initializer>
+				<finalizer>com.distriqt.extension.playservices.appset.AppSetExtension</finalizer>
+			</applicationDeployment>
+		</platform>
+
+		<platform name="default"> 
+			<applicationDeployment /> 
+		</platform>
+		
+	</platforms>
+</extension>
