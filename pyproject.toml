@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "slither-io-linux"
+version = "0.1.0"
+description = "Slither.io game client for Linux"
+authors = [{name = "ristorr", email = "ristorr@example.com"}]
+requires-python = ">=3.6"
+dependencies = [
+    "pygame>=2.0.0",
+    "numpy>=1.19.0",
+]
+
+[project.scripts]
+slither-io = "slither_io.main:main"
